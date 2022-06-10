@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  webui:
+    image: webui
+    build:
+      context: frontend
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+  examcellautomationapp:
+    image: examcellautomationapp
+    build:
+      context: backend
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 6200:6200
